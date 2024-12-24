@@ -17,10 +17,15 @@ export const HeaderBar = styled.header`
   border-radius: 16px;
   margin-bottom: 80px;
 
-  a {
+  a,
+  span {
     color: ${colors.white};
     text-decoration: none;
     font-weight: bold;
+  }
+
+  h1 {
+    line-height: 0;
   }
 `
 
@@ -32,14 +37,14 @@ export const HeaderRow = styled.div`
   > div {
     display: flex;
     align-items: center;
-  }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    flex: 1;
-    justify-content: space-between;
+    @media (max-width: ${breakpoints.tablet}) {
+      flex: 1;
+      justify-content: space-between;
 
-    ${Links} {
-      display: none;
+      ${Links} {
+        display: none;
+      }
     }
   }
 `
@@ -66,8 +71,9 @@ export const LinkItem = styled.li`
   }
 `
 
-export const CartButton = styled.a`
+export const CartButton = styled.span`
   display: flex;
+  cursor: pointer;
 
   img {
     margin-left: 16px;
@@ -81,7 +87,6 @@ export const CartButton = styled.a`
 
 export const Hamburguer = styled.div`
   width: 32px;
-  margin-right: 200px;
 
   span {
     height: 2px;
